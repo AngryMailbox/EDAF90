@@ -1,0 +1,13 @@
+Reflection question: What happens if the user writes an invalid uuid in the url?
+
+Om användaren skriver en ogiltig UUID i URL
+, kommer det förmodligen att resultera i ett felmeddelande eller en ogiltig sida beroende på hur applikationen är programmerad. Applikationen kan hantera detta på olika sätt, till exempel genom att visa ett felmeddelande som informerar användaren om att det inskrivna värdet inte är giltigt eller genom att omdirigera till en annan sida. Det beror på hur felhanteringen är implementerad.
+
+Reflection Question: What is the meaning of a leading / in a path, the difference between navigate("view-order/confirm/123e4567-e89b-12d3-a456-426614174000") and navigate("/view-order/confirm/123e4567-e89b-12d3-a456-426614174000"). Try it, look in the browser url field.
+
+En ledande snedstreck ("/") i en väg anger att sökvägen är absolut, vilket innebär att den börjar från rotkatalogen för applikationen. När du skriver navigate("view-order/confirm/123e4567-e89b-12d3-a456-426614174000") utan ett ledande snedstreck, kommer webbläsaren att navigera till den relativa vägen baserat på den nuvarande sidan du befinner dig på.
+
+Om du däremot använder navigate("/view-order/confirm/123e4567-e89b-12d3-a456-426614174000") med ett ledande snedstreck, navigerar webbläsaren direkt till en absolut sökväg som börjar från applikationens rot. Skillnaden blir alltså att:
+
+    Utan "/" navigerar du relativt till var du är.
+    Med "/" navigerar du alltid till en specifik, absolut sökväg från rotnivån.
